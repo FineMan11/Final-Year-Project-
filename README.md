@@ -17,3 +17,30 @@ To design and develop a fast and accurate object detection model capable of iden
 ---
 
 ## 📁 Project Structure
+
+---
+
+## 🔧 Tools & Technologies
+
+- **YOLOv5 (Ultralytics)**
+- **Python**
+- **PyTorch**
+- **Google Colab**
+- **Makesense.ai** (image annotation)
+- **Kaggle Dataset** (50+ images)
+
+---
+
+## 🧠 Methodology
+
+### 1. **Data Collection**
+- 50+ component images collected from Kaggle  
+- Components include Arduino boards and PCBs
+
+### 2. **Data Preprocessing**
+- Images resized to **640×640**
+- Normalization applied
+- Data augmentation (rotation, flip, brightness)
+- Annotation using Makesense.ai  
+- YOLO format:  
+
