@@ -38,3 +38,54 @@ Where:
 - `height` → box height (normalized)
 
 **Example:0 0.509681 0.508036 0.820308 0.869643**
+
+---
+
+## 🧪 Model Training
+
+The model was trained in Google Colab using the following hyperparameters:
+
+- **Learning rate:** 0.001  
+- **Batch size:** 16  
+- **Epochs:** 50  
+- **Model:** YOLOv5s (pretrained weights)
+
+Training steps:
+
+1. Clone YOLOv5 repo  
+2. Prepare dataset (train/val split = 80/20)  
+3. Train the model  
+4. Evaluate performance using the built-in YOLOv5 metrics  
+
+---
+
+## 📊 Performance Results
+
+The YOLOv5 model achieved:
+
+- ✔️ **High precision**
+- ✔️ **High recall**
+- ✔️ **mAP@0.5 ≈ 0.995**
+- ✔️ Good performance in early-stage testing
+
+However, challenges include:
+
+- ❗ False positives when detecting Arduino boards (background confusion)
+
+Visual results included:
+
+- Precision–Confidence Curve  
+- Precision–Recall Curve  
+- F1-Confidence Curve  
+- Loss Curves  
+- Confusion Matrix  
+
+---
+
+## 🚀 How to Run the Model
+
+### **1️⃣ Clone YOLOv5**
+```bash
+git clone https://github.com/ultralytics/yolov5
+cd yolov5
+pip install -r requirements.txt
