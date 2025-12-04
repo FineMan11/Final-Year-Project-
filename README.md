@@ -28,3 +28,13 @@ To develop a fast and accurate object detection model capable of identifying com
 - Collected from **Kaggle**  
 - Images manually labeled using **MakeSense.ai**  
 - Annotation format:
+
+Where:
+
+- `class` → numerical label (0 = Arduino board)
+- `x_center` → center x-coordinate (normalized 0–1)
+- `y_center` → center y-coordinate (normalized 0–1)
+- `width` → box width (normalized)
+- `height` → box height (normalized)
+
+**Example:**
