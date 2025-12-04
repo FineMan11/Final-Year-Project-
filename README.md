@@ -1,46 +1,31 @@
 # Component Detection for Product Assembly in Manufacturing Using Deep Learning (YOLOv5)
 
-This project focuses on developing a deep learning–based object detection model using **YOLOv5** to identify manufacturing components such as:
+This project focuses on developing a deep learning–based object detection model using **YOLOv5** to identify components used in manufacturing assembly lines.  
+The model was trained to detect three components, with the FYP1 preliminary results focusing on the **Arduino board**.
+
+This work is conducted in collaboration with **Flex**, a global manufacturing company aiming to replace slow template-matching systems with real-time AI-powered detection.
+
+---
+
+## 🧠 Project Goal
+
+To develop a fast and accurate object detection model capable of identifying components **within 1 second**, improving manufacturing efficiency and reducing errors.
+
+---
+
+## 📦 Components Detected
 
 - Arduino Board  
+- PCB Board  
 - Arduino Nano  
-- Printed Circuit Board (PCB)
 
-The project was developed as part of the Final Year Project (FYP) for the Bachelor of Electrical Engineering (Mechatronics) at **Universiti Teknologi Malaysia (UTM)**.
-
----
-
-## 📌 Project Objective
-
-To design and develop a fast and accurate object detection model capable of identifying manufacturing components **within 1 second**, to support automation in industries such as Flex.
+*(For FYP1, only Arduino board detection was trained and evaluated.)*
 
 ---
 
-## 📁 Project Structure
+## 📂 Dataset
 
----
-
-## 🔧 Tools & Technologies
-
-- **YOLOv5 (Ultralytics)**
-- **Python**
-- **PyTorch**
-- **Google Colab**
-- **Makesense.ai** (image annotation)
-- **Kaggle Dataset** (50+ images)
-
----
-
-## 🧠 Methodology
-
-### 1. **Data Collection**
-- 50+ component images collected from Kaggle  
-- Components include Arduino boards and PCBs
-
-### 2. **Data Preprocessing**
-- Images resized to **640×640**
-- Normalization applied
-- Data augmentation (rotation, flip, brightness)
-- Annotation using Makesense.ai  
-- YOLO format:  
-
+- **50 images** used for initial training  
+- Collected from **Kaggle**  
+- Images manually labeled using **MakeSense.ai**  
+- Annotation format:  
