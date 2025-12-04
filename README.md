@@ -37,4 +37,4 @@ Where:
 - `width` → box width (normalized)
 - `height` → box height (normalized)
 
-**Example:**
+**Example:class x_center y_center width height**
