@@ -1,19 +1,19 @@
-Component Detection for Product Assembly in Manufacturing using YOLOv5
+# Component Detection for Product Assembly in Manufacturing Using Deep Learning (YOLOv5)
 
-This repository contains the implementation of a deep learning-based component detection system developed for my Final Year Project at Universiti Teknologi Malaysia (UTM).
-The model is built using YOLOv5 to detect three product assembly components:
-	•	Arduino UNO
-	•	PCB board
-	•	Arduino Nano
+This project focuses on developing a deep learning–based object detection model using **YOLOv5** to identify manufacturing components such as:
 
-The goal is to perform component detection within one second for manufacturing environments such as Flex, improving accuracy, automation, and production efficiency.
+- Arduino Board  
+- Arduino Nano  
+- Printed Circuit Board (PCB)
 
-⸻
+The project was developed as part of the Final Year Project (FYP) for the Bachelor of Electrical Engineering (Mechatronics) at **Universiti Teknologi Malaysia (UTM)**.
 
-🚀 Project Highlights
-	•	Built using YOLOv5 (Ultralytics)
-	•	Annotated 50+ images using MakeSense.ai
-	•	Trained using Google Colab GPU
-	•	Achieved mAP@0.5 = 0.995
-	•	High precision, high recall, but some false positives due to background similarity
-	•	Includes loss curves, PR curves, confusion matrix
+---
+
+## 📌 Project Objective
+
+To design and develop a fast and accurate object detection model capable of identifying manufacturing components **within 1 second**, to support automation in industries such as Flex.
+
+---
+
+## 📁 Project Structure
