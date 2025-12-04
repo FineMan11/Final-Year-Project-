@@ -27,7 +27,7 @@ To develop a fast and accurate object detection model capable of identifying com
 - **50 images** used for initial training  
 - Collected from **Kaggle**  
 - Images manually labeled using **MakeSense.ai**  
-- Annotation format:
+- Annotation format: class x_center y_center width height
 
 Where:
 
