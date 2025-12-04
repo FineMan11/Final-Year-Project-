@@ -97,3 +97,5 @@ pip install -r requirements.txt
     └── labels/
           ├── train
           └── val
+
+-data data.yaml --weights yolov5s.pt
