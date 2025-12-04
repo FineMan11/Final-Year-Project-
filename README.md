@@ -3,7 +3,6 @@
 This project focuses on developing a deep learning–based object detection model using **YOLOv5** to identify components used in manufacturing assembly lines.  
 The model was trained to detect three components, with the FYP1 preliminary results focusing on the **Arduino board**.
 
-This work is conducted in collaboration with **Flex**, a global manufacturing company aiming to replace slow template-matching systems with real-time AI-powered detection.
 
 ---
 
