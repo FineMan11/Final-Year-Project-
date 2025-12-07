@@ -14,3 +14,11 @@ Automated detection of Arduino Uno, Motor Driver, and Servo Motor for manufactur
 - Deployment
 - Project Structure
 - License
+
+## Overview
+This project focuses on detecting 3 electronic components used in product assembly:
+- Arduino Uno
+- Motor Driver
+- Servo Motor
+
+The goal is to improve manufacturing quality control by automating component identification using YOLOv5.
