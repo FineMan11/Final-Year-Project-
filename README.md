@@ -1,101 +1,72 @@
-# Component Detection for Product Assembly in Manufacturing Using Deep Learning (YOLOv5)
+# Component Detection for Product Assembly in Manufacturing Using YOLOv5
 
-This project focuses on developing a deep learning–based object detection model using **YOLOv5** to identify components used in manufacturing assembly lines.  
-The model was trained to detect three components, with the FYP1 preliminary results focusing on the **Arduino board**.
-
-
----
-
-## 🧠 Project Goal
-
-To develop a fast and accurate object detection model capable of identifying components **within 1 second**, improving manufacturing efficiency and reducing errors.
-
----
-
-## 📦 Components Detected
+This repository contains the implementation of a deep learning–based component detection system for manufacturing environments.  
+The model is built using **YOLOv5** and is designed to detect three main components:
 
 - Arduino Board  
-- PCB Board  
+- Printed Circuit Board (PCB)  
 - Arduino Nano  
 
-*(For FYP1, only Arduino board detection was trained and evaluated.)*
+This project is part of my **Final Year Project (FYP)** at **Universiti Teknologi Malaysia (UTM)**.
 
 ---
 
-## 📂 Dataset
+## 📌 Objectives
 
-- **50 images** used for initial training  
-- Collected from **Kaggle**  
-- Images manually labeled using **MakeSense.ai**  
-- Annotation format: class x_center y_center width height
+- Develop a YOLOv5 object detection model optimized for manufacturing components.
+- Achieve real-time detection (within 1 second).
+- Improve the accuracy and reliability of automated assembly processes.
+- Provide an easily deployable model for companies such as **Flex**.
+
+---
+
+## 📂 Project Structure
+
+
+---
+
+## 🖼️ Dataset & Annotation Format
+
+Images were collected and manually annotated using **MakeSense.ai**.
+
+YOLO annotation format:
+
 
 Where:
 
-- `class` → numerical label (0 = Arduino board)
-- `x_center` → center x-coordinate (normalized 0–1)
-- `y_center` → center y-coordinate (normalized 0–1)
-- `width` → box width (normalized)
-- `height` → box height (normalized)
+- `class` → numerical label (0 = Arduino board, 1 = PCB, 2 = Arduino Nano)  
+- `x_center` → normalized center x-coordinate (0–1)  
+- `y_center` → normalized center y-coordinate (0–1)  
+- `width` → bounding box width (normalized)  
+- `height` → bounding box height (normalized)
 
-**Example:0 0.509681 0.508036 0.820308 0.869643**
-
----
-
-## 🧪 Model Training
-
-The model was trained in Google Colab using the following hyperparameters:
-
-- **Learning rate:** 0.001  
-- **Batch size:** 16  
-- **Epochs:** 50  
-- **Model:** YOLOv5s (pretrained weights)
-
-Training steps:
-
-1. Clone YOLOv5 repo  
-2. Prepare dataset (train/val split = 80/20)  
-3. Train the model  
-4. Evaluate performance using the built-in YOLOv5 metrics  
+### Example annotation:
 
 ---
 
-## 📊 Performance Results
+## 🧰 Tools Used
 
-The YOLOv5 model achieved:
-
-- ✔️ **High precision**
-- ✔️ **High recall**
-- ✔️ **mAP@0.5 ≈ 0.995**
-- ✔️ Good performance in early-stage testing
-
-However, challenges include:
-
-- ❗ False positives when detecting Arduino boards (background confusion)
-
-Visual results included:
-
-- Precision–Confidence Curve  
-- Precision–Recall Curve  
-- F1-Confidence Curve  
-- Loss Curves  
-- Confusion Matrix  
+- **YOLOv5 by Ultralytics**
+- **Google Colab** (GPU training)
+- **MakeSense.ai** (annotation tool)
+- **Python / PyTorch**
+- **OpenCV**
 
 ---
 
-## 🚀 How to Run the Model
+## 🚀 Model Training
 
-### **1️⃣ Clone YOLOv5**
+### Clone YOLOv5
 ```bash
 git clone https://github.com/ultralytics/yolov5
 cd yolov5
 pip install -r requirements.txt
-
-/datasets/arduino/
-    ├── images/
-    │     ├── train
-    │     └── val
-    └── labels/
-          ├── train
-          └── val
-
--data data.yaml --weights yolov5s.pt
+python train.py --img 640 --batch 16 --epochs 50 --data data.yaml --weights yolov5s.pt
+| Metric    | Result                                             |
+| --------- | -------------------------------------------------- |
+| Precision | High                                               |
+| Recall    | High                                               |
+| mAP@0.5   | ~0.995                                             |
+| F1 Score  | High                                               |
+| Issue     | Some false positives (Arduino board vs background) |
+python detect.py --weights best.pt --img 640 --source your_image.jpg
