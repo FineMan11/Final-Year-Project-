@@ -1,96 +1,110 @@
-# Component Detection for Product Assembly Using YOLOv5
-Automated detection of Arduino Uno, Motor Driver, and Servo Motor for manufacturing assembly verification.
+# Component Detection for Product Assembly Using YOLOv5  
+Automated detection of Arduino Uno, Motor Driver, and Servo Motor to support assembly verification in manufacturing environments.
+
+---
+
+## 🚀 Demo  
+*(Replace with your own demo GIF or image)*
 
 ![Demo](assets/demo.gif)
 
-## Table of Contents
-- Overview
-- Features
-- Dataset
-- Training
-- Results
-- Installation
-- Inference
-- Deployment
-- Project Structure
-- License
+---
 
-## Overview
-This project focuses on detecting 3 electronic components used in product assembly:
-- Arduino Uno
-- Motor Driver
-- Servo Motor
+## 📑 Table of Contents
+- [Overview](#overview)
+- [Features](#features)
+- [Dataset](#dataset)
+- [Training](#training)
+- [Results](#results)
+- [Installation](#installation)
+- [Inference](#inference)
+- [Project Structure](#project-structure)
+- [Deployment](#deployment)
+- [License](#license)
+- [Contact](#contact)
 
-The goal is to improve manufacturing quality control by automating component identification using YOLOv5.
+---
 
-## Features
-- Trained YOLOv5s and YOLOv5x on 960 annotated images
-- Real-time detection support (webcam)
-- High accuracy (up to 100% on Servo Motor)
-- Lightweight model available for fast deployment
-- API ready (Flask) for integration into apps
+## 🔍 Overview  
+This project implements a deep-learning–based system to automatically detect electronic components commonly used in product assembly:
 
-## Dataset
-The dataset contains 960 annotated images across 3 classes.
-- Annotation tool: Roboflow
-- Format: YOLOv5
-- Train/Val/Test split: 70/20/10
+- **Arduino Uno**  
+- **Motor Driver**  
+- **Servo Motor**
 
-Full details in `docs/DATASET.md`.
+It aims to enhance **manufacturing quality control** by enabling machines to validate components during the assembly process, reducing human error and improving production efficiency.
 
-## Training
-Training was done using Google Colab and the Roboflow YOLOv5 notebook.
+This is my Final Year Project at **Universiti Teknologi Malaysia (UTM)** titled:
 
-Key settings:
-- Model: YOLOv5s and YOLOv5x
-- Epochs: 200
-- Image size: 640
-- Optimizer: SGD
-- Dataset size: 960 images
+> **Component Detection for Product Assembly in Manufacturing Using Deep Learning Model**
 
-See `notebooks/Train_YOLOv5.ipynb` for full training notebook.
+The model was trained using **YOLOv5**, chosen for its balance of speed, accuracy, and suitability for real-time applications.
 
-## Results
+---
 
-### Model Accuracy
-| Class         | YOLOv5s | YOLOv5x |
-|---------------|---------|---------|
-| Arduino Uno   | 95.2%   | 97.1%   |
-| Motor Driver  | 93.9%   | 98.0%   |
-| Servo Motor   | 95.7%   | 100%    |
+## ⭐ Features  
+- 🧠 Trained **YOLOv5s** and **YOLOv5x** models  
+- 📊 Dataset of **960 annotated images** (Roboflow)  
+- 🎥 Real-time inference support (webcam)  
+- 🔍 High accuracy: Servo Motor detection reached **100%**  
+- ⚡ Lightweight model available for fast on-device detection  
+- 🌐 Flask API included for deployment  
+- 📝 Extensive documentation (dataset, experiments, results)
 
-More results (confusion matrix, loss curves) in `docs/RESULTS.md`.
+---
 
-![YOLOv5 Output](assets/results/detection1.jpg)
+## 📁 Dataset  
+A total of **960 images** were collected and annotated into 3 classes:
 
-## Installation
+| Class | Description |
+|-------|-------------|
+| Arduino Uno | Main microcontroller board |
+| Motor Driver | Motor driver module |
+| Servo Motor | Standard servo motor |
 
-git clone https://github.com/<your-username>/<repo>
-cd <repo>
+**Dataset details:**
+- Annotation Tool: **Roboflow**  
+- Format: **YOLOv5** (train/val/test folders)  
+- Split: **70% train**, **20% validation**, **10% test**  
+- Preprocessing: Auto-orient, resize, augmentation  
 
-pip install -r requirements.txt
+📄 Full dataset documentation → `docs/DATASET.md`
 
-## Inference
+---
 
-### Image
-python src/detect.py --weights models/yolov5s_best.pt --source assets/sample.jpg
+## 🏋️‍♂️ Training  
+Training was performed in **Google Colab** using Roboflow’s YOLOv5 notebook.
 
-### Webcam
-python src/camera_detect.py --weights models/yolov5s_best.pt
+**Training settings:**
 
-## Project Structure
+| Parameter | Value |
+|----------|--------|
+| Model | YOLOv5s & YOLOv5x |
+| Epochs | 200 |
+| Image size | 640×640 |
+| Optimizer | SGD |
+| Batch size | 16 |
+| Dataset size | 960 |
 
-component-detection/
-│── README.md
-│── requirements.txt
-│── src/
-│── docs/
-│── notebooks/
-│── assets/
-│── models/
+Training notebook → `notebooks/Train_YOLOv5.ipynb`  
+Training setup → `docs/TRAINING_SETUP.md`
 
-## License
-This project is licensed under the MIT License.
+---
 
+## 📊 Results  
 
+### **Model Accuracy**
+| Class | YOLOv5s | YOLOv5x |
+|--------|---------|---------|
+| Arduino Uno | 95.2% | 97.1% |
+| Motor Driver | 93.9% | 98.0% |
+| Servo Motor | 95.7% | 100% |
+
+### **Latency (Roboflow Benchmarks)**  
+- **YOLOv5s:** ~83 ms (≈ 12 FPS) → Fastest  
+- **YOLOv5x:** ~333 ms (≈ 3 FPS) → Most accurate  
+
+📸 Detection example:
+
+*(Placeholders: replace with your images)*
 
