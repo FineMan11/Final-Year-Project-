@@ -1,1 +1,141 @@
+# Results Summary
 
+## Project: Component Detection for Product Assembly Using YOLOv5
+
+**Author:** Rais Hamizan Bin Faridan
+**University:** Universiti Teknologi Malaysia (UTM)
+**Completed:** January 2025
+
+---
+
+## Experiment Overview
+
+| Experiment | Model | Images | Classes |
+|-----------|-------|--------|---------|
+| 1 | YOLOv5s | 330 | Arduino Uno, Servo Motor |
+| 2 | YOLOv5s | 500 | Arduino Uno, Servo Motor, Motor Driver |
+| 3 | YOLOv5s | 960 | Arduino Uno, Servo Motor, Motor Driver |
+| 4 | YOLOv5x | 960 | Arduino Uno, Servo Motor, Motor Driver |
+
+---
+
+## Detection Accuracy Results
+
+### Experiment 1 — YOLOv5s, 330 Images
+
+| Class | Accuracy (mAP@0.5) |
+|-------|-------------------|
+| Arduino Uno | 96.8% |
+| Servo Motor | 96.4% |
+| **Average** | **96.6%** |
+
+### Experiment 2 — YOLOv5s, 500 Images
+
+| Class | Accuracy (mAP@0.5) |
+|-------|-------------------|
+| Arduino Uno | 100% |
+| Motor Driver | 95.8% |
+| Servo Motor | 97.2% |
+| **Average** | **97.7%** |
+
+### Experiment 3 — YOLOv5s, 960 Images
+
+| Class | Accuracy (mAP@0.5) |
+|-------|-------------------|
+| Arduino Uno | 95.2% |
+| Motor Driver | 93.9% |
+| Servo Motor | 95.7% |
+| **Average** | **94.9%** |
+
+### Experiment 4 — YOLOv5x, 960 Images
+
+| Class | Accuracy (mAP@0.5) |
+|-------|-------------------|
+| Arduino Uno | 97.1% |
+| Motor Driver | 98.0% |
+| Servo Motor | 100% |
+| **Average** | **98.4%** |
+
+---
+
+## Model Comparison: YOLOv5s vs YOLOv5x (960 Images)
+
+| Class | YOLOv5s | YOLOv5x | Improvement |
+|-------|---------|---------|-------------|
+| Arduino Uno | 95.2% | 97.1% | +1.9% |
+| Motor Driver | 93.9% | 98.0% | +4.1% |
+| Servo Motor | 95.7% | 100% | +4.3% |
+| **Average** | **94.9%** | **98.4%** | **+3.5%** |
+
+---
+
+## Accuracy by Dataset Size (YOLOv5s)
+
+| Class | 330 Images | 500 Images | 960 Images | Trend |
+|-------|-----------|-----------|-----------|-------|
+| Arduino Uno | 96.8% | 100% | 95.2% | Peaks at 500 |
+| Motor Driver | - | 95.8% | 93.9% | Slight decrease |
+| Servo Motor | 96.4% | 97.2% | 95.7% | Slight decrease |
+
+> Motor Driver not present in Experiment 1 dataset.
+
+---
+
+## Latency Results
+
+Measured on the Roboflow deployment platform:
+
+| Model | Dataset Size | Latency | FPS | Suitability |
+|-------|-------------|---------|-----|-------------|
+| YOLOv5s | 960 images | 83.33 ms | ~12 fps | Real-time capable |
+| YOLOv5x | 960 images | 333 ms | ~3 fps | Batch/offline use |
+
+---
+
+## Training Loss Summary
+
+Both models showed consistent decrease in training losses over 200 epochs:
+- **Box Loss:** Decreased from ~0.08 to ~0.02 (YOLOv5x converged lower)
+- **Objectness Loss:** Decreased from ~0.06 to ~0.01
+- **Classification Loss:** Decreased from ~0.04 to ~0.005
+
+YOLOv5x converged to lower loss values, explaining its higher detection accuracy.
+
+---
+
+## Best Model: YOLOv5x at 960 Images
+
+- **Highest overall accuracy:** 98.4% average mAP@0.5
+- **Perfect detection:** Servo Motor achieved 100% accuracy
+- **Strongest class performance:** All 3 classes above 97%
+- **Trade-off:** 333ms latency limits to ~3 fps (suitable for offline or batch checking)
+
+---
+
+## Recommendation
+
+| Use Case | Recommended Model | Reason |
+|----------|------------------|--------|
+| Real-time assembly line monitoring | YOLOv5s | ~12 fps, 95%+ accuracy |
+| Quality inspection (post-assembly) | YOLOv5x | 98.4% accuracy, speed less critical |
+| Edge deployment (limited hardware) | YOLOv5s | Lower compute requirements |
+
+---
+
+## Comparison with Template Matching (Previous System)
+
+| Criteria | Template Matching | YOLOv5s | YOLOv5x |
+|----------|------------------|---------|---------|
+| Rotation invariance | No | Yes | Yes |
+| Lighting robustness | Low | High | High |
+| Accuracy | ~70-80%* | 94.9% | 98.4% |
+| Real-time capability | Yes | Yes | No |
+| New variant setup | Manual | Retrain | Retrain |
+
+> *Template matching accuracy estimated based on typical performance under manufacturing conditions.
+
+---
+
+## Summary
+
+This project successfully demonstrates that YOLOv5-based object detection can replace template matching for electronic component detection in manufacturing assembly. Both YOLOv5s and YOLOv5x achieve high accuracy (>94%) with YOLOv5x reaching 98.4% — significantly outperforming the existing template matching approach while also being more robust to real-world variation in component orientation, lighting, and position.
