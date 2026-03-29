@@ -20,13 +20,4 @@ This folder contains figures and visual assets for the project.
 | `dataset_sample.jpg` | Annotated dataset sample showing all 3 classes | Roboflow annotation view |
 | `system_overview.png` | System architecture / pipeline diagram | Thesis Fig. 3.x |
 
-## How to Add These Images
 
-1. Open your thesis PDF
-2. Screenshot each relevant figure
-3. Save with the filename listed above
-4. Upload to this folder or share with your collaborator to upload via GitHub API
-
-## Supported Formats
-
-GitHub renders `.jpg`, `.jpeg`, `.png`, `.gif`, and `.svg` inline in markdown files.
