@@ -5,7 +5,7 @@
 | | |
 |---|---|
 | **Author** | Rais Hamizan Bin Faridan |
-| **Supervisor** | PM Dr. Siti Armiza Mohd Aris |
+| **Supervisor** | Dr. Nurulaqilla Binti Khamis |
 | **University** | Universiti Teknologi Malaysia (UTM) |
 | **Completed** | January 2025 |
 
